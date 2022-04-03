@@ -1,0 +1,21 @@
+
+#search multipart
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+
+# 测试读取配置信息
+uploadFile:
+  tmpPath: d://temp//
+
+author:
+  name: Stan
+  age: 28
+  gender: man
+
+  #参数间的引用
+  introduce: "Name:${author.name},Age: ${author.age}"

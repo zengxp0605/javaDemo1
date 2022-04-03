@@ -1,0 +1,8 @@
+server:
+  port: 8120
+
+rocketmq:
+  producer:
+    group: producer-group
+  name-server: 1.117.83.60:9876
+

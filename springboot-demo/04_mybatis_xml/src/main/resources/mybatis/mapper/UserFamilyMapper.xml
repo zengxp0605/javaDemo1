@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jason.mybatisxml.mapper.UserFamilyMapper">
+    <resultMap id="BaseResultMap" type="com.jason.mybatisxml.model.UserFamily">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <result column="user_id" property="userId" jdbcType="BIGINT"></result>
+        <result column="family_id" property="familyId" jdbcType="BIGINT"></result>
+        <result column="family_role" property="familyRole" jdbcType="VARCHAR"></result>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, family_id, family_role
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from user_family
+    </select>
+
+    <insert id="insert" parameterType="com.jason.mybatisxml.model.UserFamily">
+        insert into
+            user_family(user_id,family_id,family_role)
+        values
+            (#{userId},#{familyId},#{familyRole})
+    </insert>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper:根标签，namespace：命名空间，随便写，一般保证命名空间唯一 -->
+<mapper namespace="com.stan.learnmybatis.mapper.BookMapper">
+    <resultMap id="resultBookPO" type="com.stan.learnmybatis.pojo.BookPO">
+        <id column="id" property="id"/>
+        <result column="book_name" property="bookName"/>
+        <result column="author" property="author"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <select id="findBook" resultMap="resultBookPO">
+      select * from book where id = #{id};
+   </select>
+
+<!--    <select id="listBooks" resultMap="resultBookPO">-->
+<!--      select * from book;-->
+<!--   </select>-->
+
+    <insert id="insertBook" keyProperty="id" useGeneratedKeys="true"
+        parameterType="com.stan.learnmybatis.pojo.BookPO"
+    >
+        insert into book (
+            author,
+            book_name
+           ,create_time
+        ) values (
+         #{author},
+         #{bookName},
+         #{createTime}
+        )
+    </insert>
+</mapper>

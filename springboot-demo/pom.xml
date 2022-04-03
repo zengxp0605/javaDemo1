@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.stan</groupId>
+    <artifactId>springboot-demo</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>springboot-demo</name>
+    <description>Demo project for Spring Boot</description>
+
+    <packaging>pom</packaging>
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
+        <fastjson.version>1.2.62</fastjson.version>
+        <slf4j.version>1.7.25</slf4j.version>
+    </properties>
+
+    <modules>
+        <module>0_project_template</module>
+        <module>00_basejava</module>
+        <module>01_helloworld</module>
+        <module>02_jpa</module>
+        <module>03_redis</module>
+        <module>04_mybatis</module>
+        <module>05_mybatis_multi</module>
+        <module>04_mybatis_xml</module>
+        <module>06_groovy_tst</module>
+        <module>07_1_RabbitMQ</module>
+        <module>07_2_RocketMQ</module>
+        <module>08_upload_file</module>
+        <module>09_rpc_dubbo</module>
+        <module>10_mytask</module>
+        <module>11_my_annotation</module>
+        <module>12-sleep-algorithm</module>
+        <module>13-springboot-strategy</module>
+        <module>15-application-event</module>
+        <module>16-quartz</module>
+        <module>17-multi-thread</module>
+        <module>18-lock</module>
+        <module>19-aspect</module>
+        <module>20-mybatis-plus</module>
+        <module>21-test-base-module</module>
+        <module>21-test-useage</module>
+        <module>22-component_vs_configuration</module>
+        <!--        <module>14-swagger-loggers</module>-->
+
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-log4j12</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+
+</project>
