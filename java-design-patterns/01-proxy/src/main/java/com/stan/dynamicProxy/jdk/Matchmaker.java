@@ -1,5 +1,6 @@
 package com.stan.dynamicProxy.jdk;
 
+import com.stan.dynamicProxy.Person;
 import sun.misc.ProxyGenerator;
 
 import java.io.File;

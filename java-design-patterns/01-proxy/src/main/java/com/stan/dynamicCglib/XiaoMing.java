@@ -1,11 +1,10 @@
-package com.stan.dynamicProxy.jdk;
+package com.stan.dynamicCglib;
 
-import com.stan.dynamicProxy.Person;
 
 /**
- * 被代理人
+ * 被代理人, 不需要实现接口
  */
-public class XiaoWang implements Person {
+public class XiaoMing {
     public Object findLover() {
         System.out.println("===我是小王，要找个女朋友。");
         return null;

@@ -1,4 +1,4 @@
-package com.stan.dynamicProxy.jdk;
+package com.stan.dynamicProxy;
 
 /**
  * 抽象接口

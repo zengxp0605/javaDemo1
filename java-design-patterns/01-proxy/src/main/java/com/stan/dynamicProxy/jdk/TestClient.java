@@ -1,6 +1,8 @@
 package com.stan.dynamicProxy.jdk;
 
 
+import com.stan.dynamicProxy.Person;
+
 /**
  * 测试
  */

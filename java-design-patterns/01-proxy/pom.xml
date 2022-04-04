@@ -13,4 +13,12 @@
     <artifactId>01-proxy</artifactId>
     <name>01-proxy</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+    </dependencies>
+
 </project>
