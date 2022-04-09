@@ -1,0 +1,33 @@
+public:
+  env: local
+
+server:
+  port: 8090
+  address: 0.0.0.0
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: swagger-dubbo-demo
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    protocol: https
+    address: nacos://dev-fosun-aid-nacos.fosun.com:443
+    parameters[namespace]: ${public.env}
+  protocol:
+    #    host: 192.168.2.207
+    name: dubbo
+    port: 20890
+  provider:
+    group: ${public.env}
+    version: LATEST
+    timeout: 10000
+  consumer:
+    group: ${public.env}
+    version: LATEST
+    check: true
+    retries: 0
+    timeout: 5000
