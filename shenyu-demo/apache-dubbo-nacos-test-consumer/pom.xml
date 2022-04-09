@@ -13,7 +13,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring.boot.starter.version>2.2.8.RELEASE</spring.boot.starter.version>
+        <spring.boot.starter.version>2.5.12</spring.boot.starter.version>
         <commons.lang3.version>3.8.1</commons.lang3.version>
         <fastjson.version>1.2.75</fastjson.version>
         <aspectj.tools.version>1.8.13</aspectj.tools.version>
