@@ -49,6 +49,7 @@
         <module>21-test-base-module</module>
         <module>21-test-useage</module>
         <module>22-component_vs_configuration</module>
+        <module>23-not-eligible-for-auto-proxying</module>
         <!--        <module>14-swagger-loggers</module>-->
 
     </modules>

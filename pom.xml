@@ -10,8 +10,12 @@
 
     <modules>
         <module>spring-demo</module>
-<!--        <module>springboot-demo</module>-->
+        <module>springboot-demo</module>
         <module>java-design-patterns</module>
+        <module>shenyu-demo</module>
+        <module>sa-token-demo</module>
+        <module>netty-demo</module>
+        <module>other-demo</module>
 
     </modules>
 

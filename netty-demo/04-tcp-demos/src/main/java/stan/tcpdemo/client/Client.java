@@ -19,7 +19,7 @@ public class Client {
             b.group(group)
                     .channel(NioSocketChannel.class)
                     .handler(new ClientInitializer());
-            Channel ch = b.connect("127.0.0.1", 3001).sync().channel();
+            Channel ch = b.connect("zecho.jasonzeng.top", 8888).sync().channel();
 
             ChannelFuture lastWriteFuture = null;
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -44,6 +44,10 @@ public class Client {
             if (lastWriteFuture != null) {
                 lastWriteFuture.sync();
             }
+
+
+            // Wait until the connection is closed.
+//            ch.closeFuture().sync();
         } finally {
             group.shutdownGracefully();
         }

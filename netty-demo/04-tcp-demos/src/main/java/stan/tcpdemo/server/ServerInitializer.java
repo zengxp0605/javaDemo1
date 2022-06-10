@@ -7,12 +7,12 @@ import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import stan.tcpdemo.server.handler.BufferHandler;
+import stan.tcpdemo.server.handler.SimpleStringHandler;
 
 public class ServerInitializer extends ChannelInitializer<SocketChannel> {
     private static final StringDecoder DECODER = new StringDecoder();
     private static final StringEncoder ENCODER = new StringEncoder();
-
-    private static final ServerHandler SERVER_HANDLER = new ServerHandler();
 
     @Override
     public void initChannel(SocketChannel ch) throws Exception {
@@ -20,11 +20,17 @@ public class ServerInitializer extends ChannelInitializer<SocketChannel> {
 
         // 添加帧限定符来防止粘包现象
         pipeline.addLast(new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
+
+        //debug Buffer
+        pipeline.addLast(new BufferHandler());
+
         // 解码和编码，应和客户端一致
-        pipeline.addLast(DECODER);
-        pipeline.addLast(ENCODER);
+        pipeline.addLast(new StringDecoder());
+        pipeline.addLast(new StringEncoder());
 
         // 业务逻辑实现类
-        pipeline.addLast(SERVER_HANDLER);
+        pipeline.addLast(new SimpleStringHandler());
+
+
     }
 }

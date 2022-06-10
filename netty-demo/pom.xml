@@ -30,7 +30,7 @@
         <module>03-netty-rpc</module>
         <module>04-tcp-demos</module>
         <module>05-netty-spring-mybatis</module>
-        <module>06-netty-ws</module>
+        <module>06-netty-ws2</module>
     </modules>
 
     <dependencies>

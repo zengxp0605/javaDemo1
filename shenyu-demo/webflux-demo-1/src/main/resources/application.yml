@@ -1,5 +1,5 @@
 server:
-  port: 8085
+  port: 8885
 
 spring:
   application:
@@ -7,5 +7,5 @@ spring:
   main:
     allow-bean-definition-overriding: true
   redis:
-    node: ${REDIS_URL:dev-k8s.fosun.com:38543}
-    password: ${REDIS_PASSWORD:sdcjn2xwdmicwSCJCN}
+    node: ${REDIS_URL__NO:dev-k8s.fosun.com:38543}
+    password: ${REDIS_PASSWORD__NO:sdcjn2xwdmicwSCJCN}

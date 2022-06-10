@@ -1,29 +1,21 @@
 package com.stan.webfluxdemo1.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.stan.webfluxdemo1.shirotest.Base64;
 import com.stan.webfluxdemo1.shirotest.MyObjectInputStream;
 import com.stan.webfluxdemo1.shirotest.SimpleSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.core.ReactiveValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.Disposable;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @Author: zengxp
@@ -93,12 +85,12 @@ public class TestController {
     }
 
     @RequestMapping("/getOldSession")
-    public Object getOldSession() throws Exception {
-        Set<String> keys = redisTemplate.keys("session*");
+    public Set<String> getOldSession() throws Exception {
+        Set<String> keys = redisTemplate.keys("local:SESSION*");
+        System.out.println("getOldSession: " + keys.size());
         for (String key : keys) {
             System.out.println(key);
         }
-
         return keys;
     }
 
@@ -112,6 +104,23 @@ public class TestController {
         SimpleSession decodeSession = bytes2Session(Base64.decode((byte[]) cachedSession));
         System.out.println(decodeSession);
         System.out.println(decodeSession.getAttribute("userId"));
+        return decodeSession;
+    }
+
+    @RequestMapping("/parseSession")
+    public Object parseSession(String sid) throws Exception {
+        Object cachedSession = redisTemplate.opsForValue().get(sid);
+        log.info("cachedSession: {}", cachedSession);
+        SimpleSession decodeSession = bytes2Session(Base64.decode((byte[]) cachedSession));
+        log.info("decodeSession: {}", decodeSession);
+        log.info("decodeSession.getAttributeKeys : {}", decodeSession.getAttributeKeys());
+
+//        for (Object attributeKey : decodeSession.getAttributeKeys()) {
+//            log.info("{}={}", attributeKey, decodeSession.getAttribute(attributeKey));
+//        }
+
+        Object userInfo = decodeSession.getAttribute("userInfo");
+        log.info("decodeSession userInfo: {}", JSON.toJSONString(userInfo));
         return decodeSession;
     }
 
