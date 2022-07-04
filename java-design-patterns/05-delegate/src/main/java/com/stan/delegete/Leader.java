@@ -19,7 +19,7 @@ public class Leader implements ITarget {
         this.dispatch(command);
     }
 
-    private void dispatch(String command) {
+    public void dispatch(String command) {
         this.targets.get(command).doWork(command);
     }
 
