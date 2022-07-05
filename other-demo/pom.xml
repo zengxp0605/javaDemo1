@@ -11,6 +11,7 @@
 
     <modules>
         <module>breakponit</module>
+        <module>java-object-layout</module>
     </modules>
 
 </project>
