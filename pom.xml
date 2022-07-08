@@ -16,6 +16,7 @@
         <module>sa-token-demo</module>
         <module>netty-demo</module>
         <module>other-demo</module>
+        <module>java-basic</module>
 
     </modules>
 

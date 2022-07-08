@@ -8,7 +8,16 @@ import org.openjdk.jol.vm.VM;
  */
 public class ObjectDemo1 {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5};
-        System.out.println(ClassLayout.parseInstance(arr).toPrintable());
+        System.out.println(VM.current().details());
+        // 类结构
+        System.out.println(ClassLayout.parseClass(ObjectDemo1.class).toPrintable());
+
+        // 对象实例
+        Object o = new Object();
+        System.out.println(ClassLayout.parseInstance(o).toPrintable());
+        synchronized (o) {
+            System.out.println(ClassLayout.parseInstance(o).toPrintable());
+        }
+        System.out.println(ClassLayout.parseInstance(o).toPrintable());
     }
 }
