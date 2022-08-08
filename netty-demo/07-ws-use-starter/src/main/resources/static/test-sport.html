@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script type="text/javascript">
+      // {"cmd":"runData","msgId":"bbbb-0b05-4664-b3ac-625c65575c8a","data":[{"altitude":0,"cadence":0,"calories":0,"distance":0,"flag":0,"goalType":0,"goalValue":"","heartRate":0,"height":187,"ID":887,"latitude":0,"longitude":0,"pId":"1535824000610","pace":0,"runId":"111221423095152641639645803740","runType":0,"source":0,"startTime":1642760218861,"step":0,"tagKm":0,"tagStatus":1,"timeSpent":1481,"ts":1642760236681,"weight":69,"baseObjId":887}]}
+      // var url = "ws://127.0.0.1:9001/ws/abc?req=ok&token=ddadfasdfa&uid=1003";
+      var url ="ws://127.0.0.1:5116/ws?personId=11122142309515264&runId=111221423095152641639645803740&session=73c1da97-abbb-4bf7-b97e-47b20378fffe&timestamp=1638337606355&sign=aff6c32efe7587b9245339ea1474268c";
+
+      // var url = "wss://sport-dev.stg.fuyunhealth.com/ws?personId=11122142309515264&runId=111221423095152641639981223259&session=db8ac98b-e2b2-4658-94fc-58d6cb7196cd&timestamp=1638337606355&sign=d9b187ea49e539a21382bf713b71c7b5";
+
+      var socket;
+      //如果浏览器支持WebSocket
+      if (window.WebSocket) {
+        //参数就是与服务器连接的地址
+        socket = new WebSocket(url);
+
+        //客户端收到服务器消息的时候就会执行这个回调方法
+        socket.onmessage = function (event) {
+          var ta = document.getElementById("responseText");
+          ta.value = ta.value + "\n" + event.data;
+        };
+
+        //连接建立的回调函数
+        socket.onopen = function (event) {
+          var ta = document.getElementById("responseText");
+          ta.value = "连接开启: " + url;
+        };
+
+        //连接断掉的回调函数
+        socket.onclose = function (event) {
+          var ta = document.getElementById("responseText");
+          ta.value = ta.value + "\n" + "连接关闭";
+        };
+      } else {
+        alert("浏览器不支持WebSocket！");
+      }
+
+      //发送数据
+      function send(message) {
+        if (!window.WebSocket) {
+          return;
+        }
+
+        //当websocket状态打开
+        if (socket.readyState == WebSocket.OPEN) {
+          socket.send(message);
+        } else {
+          alert("连接没有开启");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="return false">
+      <textarea name="message" style="width: 400px; height: 200px"></textarea>
+
+      <input
+        type="button"
+        value="发送数据"
+        onclick="send(this.form.message.value);"
+      />
+
+      <h3>服务器输出：</h3>
+
+      <textarea
+        id="responseText"
+        style="width: 400px; height: 300px"
+      ></textarea>
+
+      <input
+        type="button"
+        onclick="javascript:document.getElementById('responseText').value=''"
+        value="清空数据"
+      />
+    </form>
+  </body>
+</html>

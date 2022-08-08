@@ -1,0 +1,13 @@
+server:
+  port: 9008
+
+# 打开feign 的服务降级
+feign:
+  circuitbreaker:
+    enabled: true # 开启服务降级
+
+local:
+  feign:
+    server:
+      wear-center:
+        url: https://dev-k8s-aid.fosun.com
