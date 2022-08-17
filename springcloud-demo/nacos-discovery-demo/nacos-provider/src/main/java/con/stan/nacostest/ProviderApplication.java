@@ -27,6 +27,7 @@ public class ProviderApplication {
 
         @GetMapping("/demo/list")
         public String demo() {
+		int a = 1;
             return "-----demo/list----";
         }
 
