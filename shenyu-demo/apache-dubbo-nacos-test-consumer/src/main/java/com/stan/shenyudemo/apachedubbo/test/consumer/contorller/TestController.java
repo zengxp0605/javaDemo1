@@ -1,6 +1,5 @@
 package com.stan.shenyudemo.apachedubbo.test.consumer.contorller;
 
-import com.fosun.user.api.dubbo.SysUserManageDubbo;
 import com.stan.shenyudemo.dubboapi.entity.DubboTest;
 import com.stan.shenyudemo.dubboapi.service.DubboTestService;
 import io.swagger.annotations.ApiOperation;

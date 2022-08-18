@@ -9,7 +9,7 @@
 	<id>apache-dubbo-nacos-test-consumer</id>
 
 	<classpath>
-		<dir name="/Users/jasonzeng/git/shenyu-mydemo/apache-dubbo-nacos-test-consumer/target/classes">
+		<dir name="/Users/jasonzeng/git/shenyu-demo/apache-dubbo-nacos-test-consumer/target/classes">
 		</dir>
 	</classpath>
 

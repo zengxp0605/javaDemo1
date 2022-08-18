@@ -16,7 +16,6 @@
 
 package com.stan.shenyundemo.apachedubbo.server.serviceImpl;
 
-import com.fosun.user.api.http.LoginDubbo;
 import com.stan.shenyudemo.dubboapi.entity.DubboTest;
 import com.stan.shenyudemo.dubboapi.entity.ListResp;
 import com.stan.shenyudemo.dubboapi.service.DubboTestService;
@@ -39,8 +38,6 @@ public class DubboTestServiceImpl implements DubboTestService {
     @Value("${public.env}")
     private String env;
 
-    @DubboReference
-    public LoginDubbo loginDubbo;
 
     @Override
     @ShenyuDubboClient(path = "/findById", desc = "Query by Id")
@@ -60,8 +57,6 @@ public class DubboTestServiceImpl implements DubboTestService {
 //    @OpenApiTest(path = "/findAll2", desc = "Get all data")
     public DubboTest findAll() {
         System.out.println("--->findAll,env: " + env);
-        loginDubbo.login();
-
         try {
             String attachment = RpcContext.getContext().getAttachment("add-value");
             System.out.println("attachment `add-value`: " + attachment);

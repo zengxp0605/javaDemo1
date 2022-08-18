@@ -9,7 +9,7 @@
 	<id>dubbo-api</id>
 
 	<classpath>
-		<dir name="/Users/jasonzeng/git/shenyu-mydemo/dubbo-api/target/classes">
+		<dir name="/Users/jasonzeng/git/shenyu-demo/dubbo-api/target/classes">
 		</dir>
 	</classpath>
 

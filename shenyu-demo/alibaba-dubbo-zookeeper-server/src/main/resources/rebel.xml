@@ -9,7 +9,7 @@
 	<id>alibaba-dubbo-zookeeper-server</id>
 
 	<classpath>
-		<dir name="/Users/jasonzeng/git/shenyu-mydemo/alibaba-dubbo-zookeeper-server/target/classes">
+		<dir name="/Users/jasonzeng/git/shenyu-demo/alibaba-dubbo-zookeeper-server/target/classes">
 		</dir>
 	</classpath>
 

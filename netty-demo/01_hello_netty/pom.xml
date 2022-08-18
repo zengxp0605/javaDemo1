@@ -12,9 +12,5 @@
 
     <artifactId>hello-netty</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>04-tcp-demo</module>
-    </modules>
-
 
 </project>
