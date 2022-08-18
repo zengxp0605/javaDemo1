@@ -30,6 +30,7 @@
         <module>03_redis</module>
         <module>04_mybatis</module>
         <module>05_mybatis_multi</module>
+        <module>05-mybatis-oracle</module>
         <module>04_mybatis_xml</module>
         <module>06_groovy_tst</module>
         <module>07_1_RabbitMQ</module>
