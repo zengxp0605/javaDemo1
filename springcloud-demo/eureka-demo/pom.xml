@@ -15,6 +15,7 @@
 
     <modules>
         <module>01-eureka-server</module>
+        <module>02-client-user-service</module>
     </modules>
 
     <properties>
