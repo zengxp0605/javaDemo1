@@ -1,0 +1,12 @@
+server:
+  port: 8701
+spring:
+  application:
+    name: user-service
+
+eureka:
+  client:
+    service-url:
+      # eureka 服务地址，如果是集群的话；需要指定其它集群eureka地址
+      defaultZone: http://localhost:8763/eureka/
+

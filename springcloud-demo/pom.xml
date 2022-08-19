@@ -4,21 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.stan</groupId>
-    <artifactId>java-learn-demo</artifactId>
+    <artifactId>springcloud-demo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-demo</module>
-        <module>springboot-demo</module>
-        <module>springcloud-demo</module>
-        <module>java-design-patterns</module>
-        <module>shenyu-demo</module>
-        <module>sa-token-demo</module>
-        <module>netty-demo</module>
-        <module>other-demo</module>
-        <module>java-basic</module>
-
+        <module>k8s-consumer-demo</module>
+        <module>nacos-config-demo</module>
+        <module>nacos-discovery-demo</module>
+        <module>eureka-demo</module>
     </modules>
 
 </project>
