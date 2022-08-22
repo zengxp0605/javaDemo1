@@ -10,3 +10,19 @@ eureka:
       # eureka 服务地址，如果是集群的话；需要指定其它集群eureka地址
       defaultZone: http://localhost:8763/eureka/
 
+
+########## 以下为注册中心 apollo配置 ####################
+# apollo 相关配置
+app:
+  id: ${spring.application.name} # 与 Apollo 配置中心中的 AppId 一致
+
+apollo:
+  meta: http://zecho.jasonzeng.top:8080 # Apollo 中的 Eureka 注册中心地址
+  #cluster:  # 指定 Apollo 集群，相同集群实例使用对应集群的配置
+  bootstrap:
+    enable: true # 启用 apollo
+
+env: DEV # 指定环境
+
+# 自定义配置
+name: user-service-tmp-name
