@@ -1,10 +1,13 @@
 
-# 基于Swagger构建的Rest API文档
+# actuator prometheus 使用示例
+
+
+## 基于Swagger构建的Rest API文档
   
 api地址： <http://localhost:8080/swagger-ui.html>
 
 
-# 动态修改日志
+## 动态修改日志
 - 查看详情：<http://localhost:8080/actuator/loggers>
 
 - 配置

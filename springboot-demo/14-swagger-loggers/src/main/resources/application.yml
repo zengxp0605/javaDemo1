@@ -1,3 +1,7 @@
-management.endpoints.web.exposure.include: loggers
+
+server.port: 9500
+
+#management.endpoints.web.exposure.include: loggers
+management.endpoints.web.exposure.include: '*' # 暴露所有端点
 #显示健康具体信息  默认不会显示详细信息
 management.endpoint.health.show-details: always

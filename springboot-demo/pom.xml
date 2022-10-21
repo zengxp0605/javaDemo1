@@ -41,6 +41,7 @@
         <module>11_my_annotation</module>
         <module>12-sleep-algorithm</module>
         <module>13-springboot-strategy</module>
+        <module>14-swagger-loggers</module>
         <module>15-application-event</module>
         <module>16-quartz</module>
         <module>17-multi-thread</module>
@@ -52,7 +53,6 @@
         <module>22-component_vs_configuration</module>
         <module>23-not-eligible-for-auto-proxying</module>
         <module>24-autowird-test</module>
-        <!--        <module>14-swagger-loggers</module>-->
 
     </modules>
 
@@ -77,10 +77,10 @@
     </dependencyManagement>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-log4j12</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.slf4j</groupId>-->
+        <!--            <artifactId>slf4j-log4j12</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -96,13 +96,13 @@
 
     </dependencies>
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <!--    <build>-->
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.springframework.boot</groupId>-->
+    <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
 
 </project>
