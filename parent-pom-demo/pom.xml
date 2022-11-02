@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--    <parent>-->
+<!--        <artifactId>java-learn-demo</artifactId>-->
+<!--        <groupId>com.stan</groupId>-->
+<!--        <version>1.0.0-SNAPSHOT</version>-->
+<!--    </parent>-->
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stan</groupId>
+    <artifactId>nb-spring-all</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <revision>1.0.1</revision>
+    </properties>
+
+    <modules>
+        <module>nb-spring-parent</module>
+        <module>nb-spring-facade</module>
+        <module>nb-spring-controller</module>
+        <module>nb-spring-web</module>
+        <module>nb-spring-test</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.2.7</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

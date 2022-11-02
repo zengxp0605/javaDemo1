@@ -26,7 +26,7 @@ public class WebController {
     private static final Logger logger = LoggerFactory.getLogger(WebController.class);
 
     @RequestMapping("/")
-    @Counted(value = "stan.app.counted.index", description = "首页访问次数") // 监控没有起作用
+    @Counted(value = "stan.app.counted.index", description = "首页访问次数") // counted监控没有起作用
     public String index() {
         logger.debug("Logger Level :DEBUG");
         logger.info("Logger Level :INFO");
@@ -47,3 +47,4 @@ public class WebController {
     }
 
 }
+

@@ -19,6 +19,7 @@
         <module>other-demo</module>
         <module>java-basic</module>
         <module>leetcode</module>
+        <module>parent-pom-demo</module>
 
     </modules>
 
