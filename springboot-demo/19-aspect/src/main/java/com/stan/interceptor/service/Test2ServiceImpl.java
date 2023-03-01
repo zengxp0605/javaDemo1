@@ -1,6 +1,8 @@
 package com.stan.interceptor.service;
 
 import com.stan.interceptor.annotation.HttpApi;
+import com.stan.interceptor.dao.TestDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,9 +13,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class Test2ServiceImpl implements Test2Service {
+
+    @Autowired
+    private TestDao testDao;
+
     @Override
     public void a() {
         System.out.println("method a");
+        testDao.query1();
     }
 
     @Override

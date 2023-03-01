@@ -53,6 +53,7 @@
         <module>22-component_vs_configuration</module>
         <module>23-not-eligible-for-auto-proxying</module>
         <module>24-autowird-test</module>
+        <module>24-autowird-test-product</module>
 
     </modules>
 

@@ -16,6 +16,7 @@ public class HttpApiInterceptor implements MethodInterceptor {
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
         Method method = invocation.getMethod();
+//        System.out.println("---->invoke");
         if (!method.isAnnotationPresent(HttpApi.class)) {
             return invocation.proceed();
         }
@@ -23,10 +24,10 @@ public class HttpApiInterceptor implements MethodInterceptor {
         String methodName = method.getName();
         HttpApi annotationHttpApi = method.getAnnotation(HttpApi.class);
 
-        System.out.println("---------------cutPoint-------before: " + methodName);
+        System.out.println("====================cutPoint before: " + methodName);
         System.out.println("--->annotationValue: " + annotationHttpApi.value());
         Object proceed = invocation.proceed();
-        System.out.println("---------------cutPoint-------end: " + methodName);
+        System.out.println("====================cutPoint end: " + methodName);
 
 
         return proceed;
