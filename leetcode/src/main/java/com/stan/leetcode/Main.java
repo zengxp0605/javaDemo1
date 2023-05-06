@@ -2,9 +2,13 @@ package com.stan.leetcode;
 
 public class Main {
     public static void main(String[] args) {
-//        maximum_ascending_subarray_sum
+        Integer i = 1230000;
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println((Math.pow(2, 31) - 1) == Integer.MAX_VALUE);
 
-//        MaximumAscendingSubarraySum
-        System.out.println("Hello world!");
+        byte byteValue = i.byteValue();
+        System.out.println(byteValue);
+
+
     }
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 2. 两数相加，两个 非空 的链表
+ * <https://leetcode.cn/problems/add-two-numbers/description/>
  */
 public class T0002_linklist_add_two_numbers {
 
