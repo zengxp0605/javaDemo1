@@ -1,0 +1,14 @@
+
+### GET All address
+GET http://localhost:8701/user/v1/address/getAll
+Accept: application/json
+
+### POST queryDetail
+POST http://localhost:8701/user/v1/address/queryDetail
+Content-Type: application/json
+
+{
+  "addressId": 123
+}
+
+###

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.stan.msrv</groupId>
+        <artifactId>msrv-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stan</groupId>
+    <version>${revision}</version>
+    <artifactId>51-user-server</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <revision>${user-server.version}</revision>
+    </properties>
+
+    <modules>
+        <module>user-facade</module>
+        <module>user-controller</module>
+        <module>user-biz</module>
+        <module>user-core</module>
+        <module>user-dao</module>
+        <module>user-common</module>
+
+        <module>user-web</module>
+        <module>user-test</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--     内部模块依赖       -->
+            <dependency>
+                <groupId>com.stan</groupId>
+                <artifactId>user-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.stan</groupId>
+                <artifactId>user-controller</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.stan</groupId>
+                <artifactId>user-core</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.stan</groupId>
+                <artifactId>user-biz</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.stan</groupId>
+                <artifactId>user-facade</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.stan</groupId>
+                <artifactId>user-dao</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!--      二方库依赖      -->
+            <dependency>
+                <groupId>com.stan.common</groupId>
+                <artifactId>model</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.2.7</version>
+            </plugin>
+    
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

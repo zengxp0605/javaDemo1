@@ -5,16 +5,15 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.stan</groupId>
-    <packaging>pom</packaging>
+    <groupId>com.stan.common</groupId>
     <version>1.0.0-SNAPSHOT</version>
-    <artifactId>msrv-framework</artifactId>
+    <artifactId>common-parent</artifactId>
+    <packaging>pom</packaging>
 
     <modules>
-        <module>0-parent</module>
-        <module>00-common</module>
-        <module>01-gateway</module>
-        <module>51-user-server</module>
-        <module>52-guard-server</module>
+        <module>cache</module>
+        <module>model</module>
+
     </modules>
+
 </project>
