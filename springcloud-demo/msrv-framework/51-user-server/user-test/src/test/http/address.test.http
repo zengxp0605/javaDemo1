@@ -11,4 +11,12 @@ Content-Type: application/json
   "addressId": 123
 }
 
+### 通过gateway调用
+POST http://localhost:8888/api/user/v1/address/queryDetail
+Content-Type: application/json
+
+{
+  "addressId": 123
+}
+
 ###

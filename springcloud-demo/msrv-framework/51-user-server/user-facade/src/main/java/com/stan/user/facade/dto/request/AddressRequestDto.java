@@ -3,12 +3,15 @@ package com.stan.user.facade.dto.request;
 import com.stan.common.model.dto.BaseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * @author：zengxp
- * @date：2023/5/8 下午5:30
  */
 @Data
+@ToString
+@NoArgsConstructor
 @AllArgsConstructor
 public class AddressRequestDto extends BaseDto {
     private Integer addressId;

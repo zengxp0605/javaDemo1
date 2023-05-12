@@ -24,6 +24,13 @@ test 测试模块
 guard-server服务调用 user-server服务。
 
 
+## 网关gateway，测试脚本在 user-test 包
+- 调用user服务
+http://localhost:8888/api/user/v1/address/getAll
+
+- 调用guard服务
+http://localhost:8888/api/guard/feign
+
 ## 附录
 
 1. 快速配置apollo: <https://www.apolloconfig.com/#/zh/deployment/quick-start>

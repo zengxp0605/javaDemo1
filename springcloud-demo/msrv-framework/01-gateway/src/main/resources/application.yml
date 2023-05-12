@@ -1,0 +1,65 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: mrsv-gateway
+  cloud:
+    gateway:
+      routes:
+        # 路由id，可以随意写
+        - id: user-server-route
+          uri: lb://user-server
+          # 路由断言，可以配置映射路径
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - StripPrefix=1
+        - id: guard-server-route
+          uri: lb://guard-server
+          # 路由断言，可以配置映射路径
+          predicates:
+            - Path=/api/guard/**
+          filters:
+            - StripPrefix=2
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin, RETAIN_LAST
+      globalcors:
+        cors-configurations:
+          '[/api/bill/*]':   #全路径
+            allowedOrigins: '*'  #允许所有的域
+            allowedHeaders: "*"
+            allowCredentials: true
+            allowedMethods:
+              - POST
+              - GET
+              - PUT
+              - DELETE
+          '[/api/bill/test]': #全路径
+            allowedOrigins: '*'  #允许所有的域
+            allowedHeaders: "*"
+            allowCredentials: true
+            allowedMethods: '*'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zecho.jasonzeng.top:8080/eureka
+#  instance:
+#    instance-id: http://127.0.0.1:${server.port}
+#    prefer-ip-address: true
+#    ip-address: 127.0.0.1
+#
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 6000 #服务降级超时时间，默认1S
+#
+#
+#ribbon:
+#  ConnectTimeout: 1000 # 连接超时时长
+#  ReadTimeout: 2000 # 数据通信超时时长
+#  MaxAutoRetries: 0 # 当前服务器的重试次数
+#  MaxAutoRetriesNextServer: 0 # 重试多少次服务
+#
