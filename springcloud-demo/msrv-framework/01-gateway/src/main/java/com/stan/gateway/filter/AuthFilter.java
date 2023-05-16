@@ -10,5 +10,5 @@ package com.stan.gateway.filter;
  */
 public class AuthFilter {
     // TODO: 需要依赖权限检验服务。。
-      
+
 }

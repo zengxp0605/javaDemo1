@@ -16,5 +16,6 @@
         <module>01-gateway</module>
         <module>51-user-server</module>
         <module>52-guard-server</module>
+        <module>0-framework-base</module>
     </modules>
 </project>
