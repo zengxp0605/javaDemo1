@@ -23,7 +23,7 @@ public class TestSerialzable implements Serializable {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String fileName = "d:/temp/TestSerialzable.obj";
+        String fileName = "/Users/stan/tmp/TestSerialzable.obj";
         // 序列化
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fileName));
         objectOutputStream.writeObject("序列化测试");
@@ -36,7 +36,8 @@ public class TestSerialzable implements Serializable {
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName));
         System.out.println("1: " + ois.readObject());
         System.out.println("2: " + ois.readObject());
-        System.out.println("3: " + ois.readObject());
+        TestSerialzable obj = (TestSerialzable) ois.readObject();
+        System.out.println("3: " + obj);
 
     }
 }
