@@ -17,7 +17,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.boot.version>2.2.8.RELEASE</spring.boot.version>
+        <spring.boot.version>2.5.12</spring.boot.version>
 
         <!--    历史版本号    -->
         <version-20210322>NB_20210322_RELEASE</version-20210322>
